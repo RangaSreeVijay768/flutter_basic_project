@@ -1,4 +1,4 @@
-import 'package:basic/core/models/common/paginated_request.dart';
+import 'package:basic/app/core/models/common/paginated_request.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 

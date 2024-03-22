@@ -1,6 +1,6 @@
-import 'package:basic/core/models/common/base_entity.dart';
 import 'package:json_annotation/json_annotation.dart';
 
+import '../common/base_entity.dart';
 import '../common/converters/date_time_to_app_date_time_converter.dart';
 
 part 'user_account.g.dart';

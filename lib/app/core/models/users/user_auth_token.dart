@@ -1,4 +1,4 @@
-import 'package:basic/core/models/users/user_account.dart';
+import 'package:basic/app/core/models/users/user_account.dart';
 
 import 'package:json_annotation/json_annotation.dart';
 

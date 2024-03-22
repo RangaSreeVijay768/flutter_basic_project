@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:basic/themes/borders.dart';
+import 'package:basic/app/themes/borders.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
