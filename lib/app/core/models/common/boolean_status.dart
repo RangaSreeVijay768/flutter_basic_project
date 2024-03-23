@@ -7,5 +7,6 @@ enum BooleanStatus {
   closed,
   success,
   deleted,
-  received
+  received,
+  error
 }

@@ -13,6 +13,5 @@ enum BooleanStatus {
   running,
   stop,
   pick,
-  picked,
-
+  picked
 }

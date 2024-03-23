@@ -4,10 +4,10 @@ part 'paginated_request.g.dart';
 
 @JsonSerializable()
 class PaginatedRequest {
-  String? lastDocumentId;
+  int? first;
   int? count;
 
-  PaginatedRequest({this.lastDocumentId, this.count});
+  PaginatedRequest({this.first, this.count});
 
   factory PaginatedRequest.fromJson(Map<String, dynamic> json) =>
       _$PaginatedRequestFromJson(json);

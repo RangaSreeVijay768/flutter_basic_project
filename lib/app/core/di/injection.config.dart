@@ -24,7 +24,7 @@ extension GetItInjectableX on _i1.GetIt {
       environment,
       environmentFilter,
     );
-    gh.singleton<_i3.DioClient>(() => _i3.DioClient());
+    gh.singleton<_i3.ADioClient>(() => _i3.ADioClient());
     gh.singleton<_i4.VibrationsService>(() => _i4.VibrationsService());
     return this;
   }

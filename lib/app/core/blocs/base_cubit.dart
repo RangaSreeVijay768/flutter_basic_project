@@ -1,23 +1,57 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:get_it/get_it.dart';
 import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 
+import '../analytics/firebase_analytics_service.dart';
+import '../widgets/core_toast_success/core_toast_success.dart';
+
 abstract class BaseCubit<State> extends Cubit<State> {
   BuildContext context;
+  // late FirebaseAnalyticsService firebaseAnalyticsService;
+  FToast? fToast;
 
   BaseCubit({required this.context, required State initialState})
-      : super(initialState);
+      : super(initialState) {
+    // firebaseAnalyticsService = GetIt.instance<FirebaseAnalyticsService>();
+  }
 
   emitState(State state) {
     emit(state);
   }
 
-  // UserAccount? getLoggedUserAccount(BuildContext context) {
-  //   AuthenticationCubit authenticationCubit =
-  //   BlocProvider.of<AuthenticationCubit>(context);
-  //   return authenticationCubit.state.userAccount;
+  // Future<void> logEvent({
+  //   required String name,
+  //   Map<String, Object?>? parameters,
+  //   // AnalyticsCallOptions? callOptions,
+  // }) {
+  //   return firebaseAnalyticsService.logEvent(
+  //       name: name, parameters: parameters, callOptions: callOptions);
   // }
+
+  showErrorMessage(String message) {
+    showMessage(message, Icons.close, Colors.redAccent);
+  }
+
+  showSuccessMessage(String message){
+    showMessage(message, Icons.check, Colors.greenAccent);
+  }
+
+  showMessage(String message, IconData icon, MaterialAccentColor? color) {
+    if (fToast == null) {
+      fToast = FToast();
+      fToast!.init(context);
+    }
+    fToast!.showToast(
+        child: CoreToastSuccess(
+          message: message,
+          color: color,
+          icon: icon,
+        ),
+        gravity: ToastGravity.BOTTOM,
+        toastDuration: Duration(seconds: 2));
+  }
 }
 
 abstract class BaseFormCubit<State> extends BaseCubit<State> {

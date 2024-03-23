@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../controllers/base_modal_controller.dart';
 import '../../models/modal_data.dart';
-import '../../models/users/user_account.dart';
 import '../../widgets/base_stateless_widget.dart';
 import 'base_modal_cubit.dart';
 
@@ -14,12 +13,6 @@ abstract class BaseModalWidget<T extends BaseModalController,
       : super(key: key);
 
   Function(ModalData<M>)? onModalClosed;
-
-  // UserAccount? getLoggedUserAccount(BuildContext context) {
-  //   AuthenticationCubit authenticationCubit =
-  //       BlocProvider.of<AuthenticationCubit>(context);
-  //   return authenticationCubit.state.userAccount;
-  // }
 
   Future<T?> openModal<T>(
       {required BuildContext context, required BlocBase cubit}) {

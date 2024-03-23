@@ -9,17 +9,17 @@ part of 'sorted_paginated_request.dart';
 SortedPaginatedRequest _$SortedPaginatedRequestFromJson(
         Map<String, dynamic> json) =>
     SortedPaginatedRequest(
-      fieldName: json['field_name'] as String?,
-      descending: json['descending'] as bool?,
-      lastDocumentId: json['last_document_id'] as String?,
+      columnName: json['column_name'] as String?,
+      columnOrder: json['column_order'] as String?,
+      first: json['first'] as int?,
       count: json['count'] as int?,
     );
 
 Map<String, dynamic> _$SortedPaginatedRequestToJson(
         SortedPaginatedRequest instance) =>
     <String, dynamic>{
-      'last_document_id': instance.lastDocumentId,
+      'first': instance.first,
       'count': instance.count,
-      'field_name': instance.fieldName,
-      'descending': instance.descending,
+      'column_name': instance.columnName,
+      'column_order': instance.columnOrder,
     };

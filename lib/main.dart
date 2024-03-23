@@ -1,3 +1,4 @@
+import 'package:basic/app/core/di/injection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +9,7 @@ void main() async{
 
   WidgetsFlutterBinding.ensureInitialized();
 
+  configureDependencies();
   runApp(const MyApp());
 }
 
@@ -129,7 +131,10 @@ class _MyHomePageState extends State<MyHomePage> {
               '$_counter',
               style: Theme.of(context).textTheme.headlineMedium,
             ),
-            IconButton(onPressed: _incrementCounter, icon: Icon(Icons.add))
+            IconButton(onPressed: _incrementCounter, icon: Icon(Icons.add)),
+            // TextButton(onPressed: (){
+            //   Navigator.push(context, MaterialPageRoute(builder: (context) => ProductsGetAllProductsScreen()));
+            // }, child: Text("Products"))
           ],
         ),
       ),

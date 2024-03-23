@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../controllers/base_controller.dart';
-import '../models/users/user_account.dart';
 
 abstract class BaseStatelessWidget<T extends BaseController, C extends BlocBase,
     S> extends StatelessWidget {

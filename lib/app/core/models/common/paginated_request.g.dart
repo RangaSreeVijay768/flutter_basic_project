@@ -8,12 +8,12 @@ part of 'paginated_request.dart';
 
 PaginatedRequest _$PaginatedRequestFromJson(Map<String, dynamic> json) =>
     PaginatedRequest(
-      lastDocumentId: json['lastDocumentId'] as String?,
+      first: json['first'] as int?,
       count: json['count'] as int?,
     );
 
 Map<String, dynamic> _$PaginatedRequestToJson(PaginatedRequest instance) =>
     <String, dynamic>{
-      'lastDocumentId': instance.lastDocumentId,
+      'first': instance.first,
       'count': instance.count,
     };
